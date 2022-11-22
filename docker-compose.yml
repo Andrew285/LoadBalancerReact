@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  backend:
+    image: ${DOCKER_REGISTRY-}loadbalancerreact
+    build:
+      context: .
+      dockerfile: LoadBalancerReact/Dockerfile
+
+  backend2:
+    image: ${DOCKER_REGISTRY-}loadbalancerreact
+    build:
+      context: .
+      dockerfile: LoadBalancerReact/Dockerfile
+
+  backend3:
+    image: ${DOCKER_REGISTRY-}loadbalancerreact
+    build:
+      context: .
+      dockerfile: LoadBalancerReact/Dockerfile
+
+  client: 
+    image: client
+    build:
+      context: ./client-app
+      dockerfile: Dockerfile
+
+  proxy:
+    image: nginx:mainline

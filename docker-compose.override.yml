@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  backend:
+    hostname: 'backend'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5001:80"
+
+  backend2:
+    hostname: 'backend2'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5002:80"
+
+  backend3:
+    hostname: 'backend3'
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+        - "5003:80"
+
+  client:
+    ports:
+      - "5000:3000"
+
+  proxy:
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
