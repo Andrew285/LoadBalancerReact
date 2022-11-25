@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LoadBalancerReact.Controllers
 {
-    [Route("api/users")]
+    [Route("api/data")]
     [ApiController]
     public class UserController : ControllerBase
     {
